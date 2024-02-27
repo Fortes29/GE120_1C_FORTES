@@ -19,14 +19,16 @@ print("DMS: " + str(degree) + "-" + str(minutes_int) + "-" + str(round(seconds, 
 
 # Part 2: Converting DMS to DD
 
-d = float(input("Enter a number here: "))
-m = float(input("Enter a number here: "))
+d = int(input("Enter a number here: "))
+m = int(input("Enter a number here: "))
 s = float(input("Enter a number here: "))
+
+print(d,m,s)
 
 
 
 # outputs DD in XXX.xxxxxx format
-print("DD: ", round(,6))
+# print("DD: ", round(,6))
 
 # dms = "118-25-14.48"
 # values = dms.split("-")
