@@ -20,7 +20,7 @@ seconds = (minutes - minutes_int) * 60          # computes for the second part o
 
 # outputs DMS in XXX-XX-XX.xx format
 # using variables a,b,c to represent degree, minutes_int, and seconds, respectively
-# using 0 as fillers for the minutes_int part in case that the result is only 1 digit, >2d for taking 2 digits
+# using 0 as fillers for the minutes_int and seconds part in case that the result is only 1 digit, >2d for taking 2 digits
 # using abs to take the absolute values of minutes_int and seconds part in case that the inputted number is negative
 print("DMS: {a}-{b:0>2d}-{c}".format(a=degree, b = abs(minutes_int), c = abs(round(seconds,2))))
 
