@@ -27,14 +27,16 @@ print("DMS: {a}-{b:0>2d}-{c}".format(a=degree, b = abs(minutes_int), c = abs(rou
 
 # Part 2: Converting DMS to DD
 
-dms = str(input("Enter any number here in this format XX-XX-XX.xx: ")) 
+# inputs the number by the user, follow speficic format, "-" must be included
+dms = (input("Enter any number here in this format XXX-XX-XX.xx: ")) 
 
-values = dms.split("-")
+values = dms.split("-")         # splits the dms; takes only the numbers and removes "-"
 
-d = int(values[0])
-m = int(values[1])
-s = float(values[2])
+d = int(values[0])              # takes the first order which is the 'degree' part from the splitted dms and sets the type as integer
+m = int(values[1])              # takes the second order which is the 'minute' part from the splitted dms and sets the type as integer
+s = float(values[2])            # takes the third order which is the 'second' part from the splitted dms and sets the type as integer
 
-dd = d + (m/60) + (s/3600)
+dd = d + (m/60) + (s/3600)      # concatenates the d,m,s values as well as computing for conversion of minutes and seconds by dividing by 60 and 3600 respectively
 
-print("DD: ", round(dd,6))
+# outputs the decimal degrees, converted from the inputted DMS
+print("DD: ", round(dd, 6))      # rounds off to 6 decimal places
