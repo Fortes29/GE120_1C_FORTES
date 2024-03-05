@@ -32,11 +32,11 @@ dms = (input("Enter any number here in this format XXX-XX-XX.xx: "))
 
 values = dms.split("-")         # splits the dms; takes only the numbers and removes "-"
 
-d = int(values[0])              # takes the first order which is the 'degree' part from the splitted dms and sets the type as integer
-m = int(values[1])              # takes the second order which is the 'minute' part from the splitted dms and sets the type as integer
-s = float(values[2])            # takes the third order which is the 'second' part from the splitted dms and sets the type as integer
+d = int(values[0])              # takes the first order which is the 'degree' part from the splitted dms and sets the type as integer to only get the whole number part
+m = int(values[1])              # takes the second order which is the 'minute' part from the splitted dms and sets the type as integer to remove the decimal fractional part
+s = float(values[2])            # takes the third order which is the 'second' part from the splitted dms and sets the type as float to include the decimal fractional part
 
 dd = d + (m/60) + (s/3600)      # concatenates the d,m,s values as well as computing for conversion of minutes and seconds by dividing by 60 and 3600 respectively
 
 # outputs the decimal degrees, converted from the inputted DMS
-print("DD: ", round(dd, 6))      # rounds off to 6 decimal places
+print("DD: ", round(dd, 6))     # rounds off to 6 decimal places
