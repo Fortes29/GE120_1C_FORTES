@@ -133,3 +133,27 @@ for number in range(10):
         continue
         print(number)
         
+rec = 0      # para may mapagcomparean yung <5000
+while rec <= 5000:
+    rec = int(input("enter REC: "))
+    kulang = 5000 - rec
+    if rec >= 4500:
+        print("onti na lang kulang pwede na")
+        break
+    print("kulang ka ng rec na", kulang)
+
+print("PASOK NA REC")
+print("----END----")
+
+
+rec = 0      # para may mapagcomparean yung <5000
+while rec <= 5000:
+    rec = int(input("enter REC: "))
+    kulang = 5000 - rec
+    if rec >= 4500:
+        print("onti na lang kulang kaya mo yan")
+        continue
+    print("kulang ka ng rec na", kulang)
+    
+print("PASOK NA REC")
+print("----END----")
