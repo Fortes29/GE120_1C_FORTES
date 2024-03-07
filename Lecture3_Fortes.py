@@ -157,3 +157,14 @@ while rec <= 5000:
     
 print("PASOK NA REC")
 print("----END----")
+
+
+lista = [1,2,3]
+lista.append(5) #adds 5 to the list
+print(lista)
+
+lista.pop(3)    #removes 3 from the list
+print(lista)
+
+lista.reverse()
+print(lista)
