@@ -20,6 +20,22 @@ This include:
 In the table to be printed, add the latitude and departure columns from the said lines. 
 Finally, compute for the Linear Error of Closure (LEC) and Relative Error of Closure (REC). example: 1:500 or 1:12000
 '''
+from math import cos, sin, radians
 
-def getLatitude(d,AzS):
+def getLatitude(distance, azimuth):
+    '''
+    Compute for the latitude of a given line.
 
+    Input:
+    distance - float
+    azimuth - float
+
+    Output:
+    latitude - float
+    '''
+    latitude = -distance * cos(radians(azimuth))
+
+    return latitude
+
+lat = getLatitude(12, 45)
+print(lat)
