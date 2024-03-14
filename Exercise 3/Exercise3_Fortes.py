@@ -37,5 +37,65 @@ def getLatitude(distance, azimuth):
 
     return latitude
 
-lat = getLatitude(12, 45)
-print(lat)
+def getDeparture(distance, azimuth):
+    '''
+    Compute for the departure of a given line.
+
+    Input:
+    distance - float
+    azimuth - float
+
+    Output:
+    latitude - float
+    '''
+    departure = -distance * sin(radians(azimuth))
+
+    return departure
+
+
+def azimuthToBearing(azimuth):
+    '''
+    Compute for the DMS bearing of a given line.
+
+    Input:
+    azimuth - float
+
+    Output:
+    bearing - string
+   
+    '''
+
+    if "-" in str(azimuth) and azimuth.isType(str): # if user gives DMS
+        degrees, minutes, seconds = azimuth.split("-")
+        azimuth = (int(degrees) + (int(minutes/60)) + float(round(seconds/3600))) % 360
+    else: # general
+        azimuth = float(azimuth)%360
+
+    if azimuth > 0 and azimuth < 90:
+        bearing = 'S {: ^10} W'.format(azimuth)
+    elif azimuth > 90 and azimuth < 180:
+        bearing = 'N {: ^10} W'.format(180 - azimuth)
+    elif azimuth > 180 and azimuth < 270: 
+        bearing = 'N {: ^10} E'.format(azimuth - 180)
+    elif azimuth > 270 and azimuth < 360:
+        bearing = 'S {: ^10} E'.format(360 - azimuth)
+
+    elif azimuth == 0:
+        bearing = "DUE SOUTH"
+    elif azimuth == 90:
+        bearing = "DUE WEST"
+    elif azimuth == 180:
+        bearing = "DUE NORTH"
+    elif azimuth == 270:
+        bearing = "DUE EAST"
+    else:
+        bearing = "not defined"
+    
+    return bearing
+
+lat = getLatitude(12, 160)
+dep = getDeparture(12, 45)
+print(lat, dep)
+bearing = azimuthToBearing(123-12-12)
+print(bearing)
+
