@@ -4,6 +4,14 @@ LE 1_PartTwo: Direct Levelling Computations
 Maria Fe Fortes
 """
 
+def floatInput(prompt):
+    '''
+    This function contains the input function
+
+    Parameter - prompt
+    '''
+    
+
 tp_counter = 1    # to indicate where it starts
 levelling_table = []      # empty list to store line data  
 
